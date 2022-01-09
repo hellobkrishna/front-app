@@ -19,10 +19,10 @@ router.get('/get-inboxes', (req,res)=>{
     
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
-    const data =JSON.stringify(body);
+    const data =JSON.parse(body);
     allInbox.push(data);
     res.status(200).json(allInbox);
-    console.log(allInbox);
+    console.log(JSON.stringify(allInbox));
     });
     
 });

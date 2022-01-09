@@ -18,10 +18,10 @@ router.get('/list-contact', (req,res)=>{
       
       request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        const data=JSON.stringify(body);
+        const data=JSON.parse(body);
         allListContact.push(data);
-        res.status(200).json(allListContact)
-        console.log(allListContact);
+        res.status(200).json(allListContact);
+        console.log(JSON.stringify(allListContact));
       });
 
 

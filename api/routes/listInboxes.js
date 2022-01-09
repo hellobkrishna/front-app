@@ -18,10 +18,10 @@ router.get('/list-inboxes', (req,res)=>{
       
       request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        const data=JSON.stringify(body);
+        const data=JSON.parse(body);
         listInboxes.push(data);
         res.status(200).json(listInboxes);
-        console.log(listInboxes);
+        console.log(JSON.stringify(listInboxes));
       });
 });
 

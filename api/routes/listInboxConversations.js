@@ -18,10 +18,10 @@ const options = {
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
-  const data=JSON.stringify(body);
+  const data=JSON.parse(body);
   allListInboxesConversations.push(data);
   res.status(200).json(allListInboxesConversations);
-  console.log(allListInboxesConversations);
+  console.log(JSON.stringify(allListInboxesConversations));
 });
 
 });

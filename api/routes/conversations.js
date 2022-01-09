@@ -18,10 +18,11 @@ router.get('/conversations', (req,res)=>{
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
-  const data=JSON.stringify(body);
+  const data=JSON.parse(body);
   allList.push(data);
-  console.log("my data", allList);
   res.status(200).json(allList);
+  console.log("my data", JSON.stringify(allList));
+
 //   res.status(200).send(allList)
 //   console.log("my responcec", response)
 });
