@@ -1,6 +1,6 @@
-const express=require('express')
-const { restart } = require('nodemon')
-const router =express.Router()
+const express=require('express');
+const { restart } = require('nodemon');
+const router =express.Router();
 const  request  = require('request');
 const https = require('https');
 const inbox_id='inb_7hito';
@@ -21,7 +21,7 @@ router.get('/get-inboxes', (req,res)=>{
       if (error) throw new Error(error);
     const data =JSON.stringify(body);
     allInbox.push(data);
-    res.status(200).json(allInbox)
+    res.status(200).json(allInbox);
     console.log(allInbox);
     });
     

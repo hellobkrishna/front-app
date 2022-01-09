@@ -1,6 +1,6 @@
-const express=require('express')
-const { restart } = require('nodemon')
-const router =express.Router()
+const express=require('express');
+const { restart } = require('nodemon');
+const router =express.Router();
 const  request  = require('request');
 const https = require('https');
 
@@ -18,13 +18,13 @@ router.get('/conversations', (req,res)=>{
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
-  const data=JSON.stringify(body)
-  allList.push(data)
+  const data=JSON.stringify(body);
+  allList.push(data);
   console.log("my data", allList);
-  res.status(200).json(allList)
+  res.status(200).json(allList);
 //   res.status(200).send(allList)
 //   console.log("my responcec", response)
 });
-})
+});
 
 module.exports = router;

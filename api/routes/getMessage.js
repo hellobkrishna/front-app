@@ -1,6 +1,6 @@
-const express=require('express')
-const { restart } = require('nodemon')
-const router =express.Router()
+const express=require('express');
+const { restart } = require('nodemon');
+const router =express.Router();
 const  request  = require('request');
 const https = require('https');
 
@@ -20,11 +20,11 @@ request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
   console.log(body);
-  res.status(200).json(body)
+  res.status(200).json(body);
 
 });
 
 
-})
+});
 
 module.exports = router;

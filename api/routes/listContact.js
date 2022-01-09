@@ -1,6 +1,6 @@
-const express=require('express')
-const { restart } = require('nodemon')
-const router =express.Router()
+const express=require('express');
+const { restart } = require('nodemon');
+const router =express.Router();
 const  request  = require('request');
 const https = require('https');
 
@@ -25,6 +25,6 @@ router.get('/list-contact', (req,res)=>{
       });
 
 
-})
+});
 
 module.exports = router;
